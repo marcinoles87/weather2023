@@ -30,16 +30,12 @@ function App() {
     const valueInput = e.target.value
 
     const newArr = [...data]
-    newArr.map( (item) => {
-      console.log(item.stacja)
-      const city = item.stacja
-      const foundCity = (city) => city === valueInput
-      const nnn = newArr.findIndex(foundCity)
-      console.log(nnn)
-
+   
+      const foundCity = data.filter(city => city.stacja.includes(valueInput))
+      console.log(foundCity)
 
     
-  })}
+  }
   return (
     <div className="App">
       <h1>Weather App</h1>
