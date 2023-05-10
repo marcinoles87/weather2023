@@ -1,8 +1,22 @@
 
 import './App.scss';
+import React , {useEffect, useState} from 'react'
 
 function App() {
 
+  const [data, setData] = useState([])
+
+  useEffect( () => {
+    fetch("https://danepubliczne.imgw.pl/api/data/synop")
+    .then( response => response.json())
+    .then( data => setData(data))
+  } , [])
+
+  console.log(data)
+
+  data.map( (item) => {
+    console.log(item.stacja)
+  })
   
   return (
     <div className="App">
