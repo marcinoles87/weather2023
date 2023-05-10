@@ -34,10 +34,12 @@ function App() {
       const foundCity = data.filter(city => city.stacja.includes(valueInput))
       console.log(foundCity)
 
-      if(valueInput ===foundCity){
+      if(valueInput === foundCity){
       setCity(
-        city = foundCity
+         foundCity
       )
+
+      console.log(city)
       }
     
   }
