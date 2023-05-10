@@ -33,12 +33,13 @@ function App() {
     newArr.map( (item) => {
       console.log(item.stacja)
       const city = item.stacja
-      if(city=== valueInput){
-        return city
-      }
-    })
+      const foundCity = (city) => city === valueInput
+      const nnn = newArr.findIndex(foundCity)
+      console.log(nnn)
+
+
     
-  }
+  })}
   return (
     <div className="App">
       <h1>Weather App</h1>
