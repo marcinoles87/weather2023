@@ -14,8 +14,13 @@ function App() {
 
   console.log(data)
 
-  data.map( (item) => {
-    console.log(item.stacja)
+  data.map( ({id_stacji,stacja , temperatura}) => {
+    return <div>
+       <h2 key={id_stacji}>Country Name :{stacja}</h2>
+            <h1>{temperatura}</h1>
+            <p> Today is : Sunny</p>
+    </div>
+          
   })
   
   return (
@@ -23,7 +28,7 @@ function App() {
       <h1>Weather App</h1>
         <div className="weather-card">
             <input placeholder="find your countries..."></input>
-            <h2>Country Name</h2>
+            <h2>Country Name {}</h2>
             <h1> 20 C</h1>
             <p> Today is : Sunny</p>
         </div>
