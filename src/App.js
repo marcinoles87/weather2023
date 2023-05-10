@@ -28,6 +28,15 @@ function App() {
   const handleOnChange = (e) =>{
     e.preventDefault()
     const valueInput = e.target.value
+
+    const newArr = [...data]
+    newArr.map( (item) => {
+      console.log(item.stacja)
+      const city = item.stacja
+      if(city=== valueInput){
+        return city
+      }
+    })
     
   }
   return (
