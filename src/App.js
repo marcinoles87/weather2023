@@ -6,7 +6,8 @@ function App() {
 
   const [data, setData] = useState([])
   const [city , setCity] = useState('')
-  const [temp , setTemp] = useState(0)
+  const [prawda , setPrawda] = useState(false)
+ 
 
   useEffect( () => {
     fetch("https://danepubliczne.imgw.pl/api/data/synop")
@@ -14,6 +15,7 @@ function App() {
     .then( data => setData(data))
   } , [])
 
+   
 
   const handleOnChange = (e) =>{
     e.preventDefault()
@@ -27,6 +29,10 @@ function App() {
     
     console.log(data)
     setCity(foundCity)
+    if(valueInput == foundCity.stacja){
+       setPrawda(true)
+    }
+   
   }
   return (
     <div className="App">
@@ -35,18 +41,16 @@ function App() {
             <input placeholder="find your countries..." onChange={handleOnChange}></input>
            
             
-              {city.map( (item) => {
-                return(
-                  
-              <div>
+             {prawda ? city.map( (item) => {
+              
+              return(
+                   <div>
                 <h2>Country Name {item.stacja}</h2>
-                <h1>{item.temperatura}</h1>
-                <p> Today is : Sunny</p>
+                {/* <h1>{item.temperatura}</h1> */}
+                <p> </p>
               </div>
-                    
-                    
-                )
-              })}
+                 )
+              }) : "brak"}
                
               
             
