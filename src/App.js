@@ -24,12 +24,12 @@ function App() {
     const newArr = [...data]
    
       const foundCity = newArr.filter(city => city.stacja.includes(valueInput))
-      console.log(foundCity)
+      console.log(foundCity.stacja)
 
     
     console.log(data)
     setCity(foundCity)
-    if(valueInput == foundCity.stacja){
+    if(valueInput === foundCity.stacja){
        setPrawda(true)
     }
    
