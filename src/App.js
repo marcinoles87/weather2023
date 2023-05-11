@@ -14,16 +14,6 @@ function App() {
     .then( data => setData(data))
   } , [])
 
-  console.log(data)
-
-  data.map( ({id_stacji,stacja , temperatura}) => {
-    return <div>
-       <h2 key={id_stacji}>Country Name :{stacja}</h2>
-            <h1>{temperatura}</h1>
-            <p> Today is : Sunny</p>
-    </div>
-          
-  })
 
   const handleOnChange = (e) =>{
     e.preventDefault()
@@ -35,21 +25,31 @@ function App() {
       console.log(foundCity)
 
     
+    console.log(data)
+    setCity(foundCity)
   }
   return (
     <div className="App">
       <h1>Weather App</h1>
         <div className="weather-card">
             <input placeholder="find your countries..." onChange={handleOnChange}></input>
-            {foundCity.map( () => {
-              return (
-                <div>
-                <h2>Country Name {city}</h2>
-                <h1> 20 C</h1>
+           
+            
+              {city.map( (item) => {
+                return(
+                  
+              <div>
+                <h2>Country Name {item.stacja}</h2>
+                <h1>{item.temperatura}</h1>
                 <p> Today is : Sunny</p>
-                </div>
-              )
-            })}
+              </div>
+                    
+                    
+                )
+              })}
+               
+              
+            
             
         </div>
     </div>
