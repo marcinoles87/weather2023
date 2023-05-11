@@ -31,16 +31,9 @@ function App() {
 
     const newArr = [...data]
    
-      const foundCity = data.filter(city => city.stacja.includes(valueInput))
+      const foundCity = newArr.filter(city => city.stacja.includes(valueInput))
       console.log(foundCity)
 
-      if(valueInput === foundCity){
-      setCity(
-         foundCity
-      )
-
-      console.log(city)
-      }
     
   }
   return (
@@ -48,9 +41,16 @@ function App() {
       <h1>Weather App</h1>
         <div className="weather-card">
             <input placeholder="find your countries..." onChange={handleOnChange}></input>
-            <h2>Country Name {city}</h2>
-            <h1> 20 C</h1>
-            <p> Today is : Sunny</p>
+            {foundCity.map( () => {
+              return (
+                <div>
+                <h2>Country Name {city}</h2>
+                <h1> 20 C</h1>
+                <p> Today is : Sunny</p>
+                </div>
+              )
+            })}
+            
         </div>
     </div>
   );
