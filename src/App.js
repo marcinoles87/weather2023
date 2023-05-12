@@ -31,23 +31,18 @@ function App() {
       
       
       setCity(foundCity)
-
-    
       console.log(city)
-    
+     
+      if(city.stacja === foundCity.stacja){
+        setPrawda(true)
+      }
     
   }
 
- const  listElement =  city.map( (item) => {
-  return(
-    <div>
-      <h1>{item.stacja}</h1>
-      <h1>{item.temperatura}</h1>
-    </div>
-  )
- })
+
 
   const handleClick = () => {
+    
     setData(data)
    }
   return (
@@ -61,7 +56,14 @@ function App() {
            <h1>{data.temperatura}</h1> 
             <p>{data.data_pomiaru}</p>
 
-            {listElement}
+            {prawda ?  city.map( (item) => {
+  return(
+    <div>
+      <h1>{item.stacja}</h1>
+      <h1>{item.temperatura}</h1>
+    </div>
+  )
+ }): ""}
 
               
         </div>
