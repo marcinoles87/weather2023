@@ -33,10 +33,11 @@ function App() {
       setCity(foundCity)
       console.log(city)
      
-      if(city.stacja === foundCity.stacja){
+      if(city.length < 2){
         setPrawda(true)
       }
-    
+      
+      
   }
 
 
