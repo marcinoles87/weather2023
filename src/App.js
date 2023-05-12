@@ -24,10 +24,14 @@ function App() {
     const newArr = [...data]
    
       const foundCity = newArr.filter(city => city.stacja.includes(valueInput))
-      console.log(foundCity)
+      console.log(foundCity[0])
       console.log(valueInput)
       
-      
+      setCity(foundCity[0])
+
+
+      console.log(city)
+
 
       
     
@@ -39,8 +43,16 @@ function App() {
         <div className="weather-card">
             <input placeholder="find your countries..." onChange={handleOnChange}></input>
            
-            
-            {city.map( (item) =>{ return {item }} )}
+{/*             
+            {city.map( (item) => {
+              return(
+                <div>
+                  <h2>Stacja pomiaru : {item}</h2>
+                  <h1>{item}</h1>
+                  
+                  </div>
+              )
+            } )} */}
               
            
               
