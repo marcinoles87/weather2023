@@ -38,12 +38,13 @@ function App() {
     <div className="App">
       <h1>Weather App</h1>
         <div className="weather-card">
-            <input placeholder="find your countries..." onChange={handleOnChange}></input>
+            <input placeholder="find your City..." onChange={handleOnChange}></input>
 
             <h2>{city.stacja}</h2>
            <h1>{city.temperatura}</h1> 
             <p>{city.data_pomiaru}</p>
 
+              
         </div>
     </div>
   );
