@@ -5,7 +5,7 @@ import React , {useEffect, useState} from 'react'
 function App() {
 
   const [data, setData] = useState([])
-  const [city , setCity] = useState('')
+  const [city , setCity] = useState([])
   const [prawda , setPrawda] = useState(false)
  
 
@@ -24,15 +24,14 @@ function App() {
     const newArr = [...data]
    
       const foundCity = newArr.filter(city => city.stacja.includes(valueInput))
-      console.log(foundCity.stacja)
+      console.log(foundCity)
+      console.log(valueInput)
+      
+      
 
+      
     
-    console.log(data)
-    setCity(foundCity)
-    if(valueInput === foundCity.stacja){
-       setPrawda(true)
-    }
-   
+    
   }
   return (
     <div className="App">
@@ -41,17 +40,9 @@ function App() {
             <input placeholder="find your countries..." onChange={handleOnChange}></input>
            
             
-             {prawda ? city.map( (item) => {
+            {city.map( (item) =>{ return {item }} )}
               
-              return(
-                   <div>
-                <h2>Country Name {item.stacja}</h2>
-                {/* <h1>{item.temperatura}</h1> */}
-                <p> </p>
-              </div>
-                 )
-              }) : "brak"}
-               
+           
               
             
             
