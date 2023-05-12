@@ -31,9 +31,6 @@ function App() {
 
 
       console.log(city)
-
-
-      
     
     
   }
@@ -42,22 +39,11 @@ function App() {
       <h1>Weather App</h1>
         <div className="weather-card">
             <input placeholder="find your countries..." onChange={handleOnChange}></input>
-           
-{/*             
-            {city.map( (item) => {
-              return(
-                <div>
-                  <h2>Stacja pomiaru : {item}</h2>
-                  <h1>{item}</h1>
-                  
-                  </div>
-              )
-            } )} */}
-              
-           
-              
-            
-            
+
+            <h2>{city.stacja}</h2>
+           <h1>{city.temperatura}</h1> 
+            <p>{city.data_pomiaru}</p>
+
         </div>
     </div>
   );
