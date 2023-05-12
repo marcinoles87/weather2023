@@ -5,7 +5,7 @@ import React , {useEffect, useState} from 'react'
 function App() {
 
   const [data, setData] = useState([])
-  let [city , setCity] = useState([])
+  let [city , setCity] = useState()
   const [prawda , setPrawda] = useState(false)
  
 
@@ -23,23 +23,32 @@ function App() {
 
     const newArr = [...data]
    
-
-      setCity(
-        city= data.filter(datas => datas.includes(valueInput)))
-      // console.log(foundCity[0])
+    console.log(data)
+    
+       const foundCity = newArr.filter( (item)=> item.stacja.includes(valueInput))
+      console.log(foundCity)
       // console.log(valueInput)
       
       
-      // setCity(foundCity[0])
+      setCity(foundCity)
 
     
-      console.log(city[0].stacja)
+      console.log(city)
     
     
   }
 
+ const  listElement =  city.map( (item) => {
+  return(
+    <div>
+      <h1>{item.stacja}</h1>
+      <h1>{item.temperatura}</h1>
+    </div>
+  )
+ })
+
   const handleClick = () => {
-    setData(city)
+    setData(data)
    }
   return (
     <div className="App">
@@ -51,6 +60,8 @@ function App() {
             <h2>{data.stacja}</h2>
            <h1>{data.temperatura}</h1> 
             <p>{data.data_pomiaru}</p>
+
+            {listElement}
 
               
         </div>
