@@ -24,12 +24,14 @@ function App() {
 
     const newArr = [...data]
 
+    console.log(newArr)
+
     const foundCity = newArr.filter( (item)=> item.stacja.includes(valueInput))
     
       setCity(foundCity)
 
-    const cisnienie = foundCity[0].cisnienie
-    
+  
+  }
   
 
     const handleClick = () => {
@@ -49,12 +51,14 @@ function App() {
                   return(
                     <div key={item.stacja}>
                       <h1>{item.stacja}</h1>
-                      <p>temperatura</p>
-                      <h1>{item.temperatura}</h1>
+                      <p>{item.data_pomiaru}</p>
+                      <h2>temperatura wynosi :</h2>
+                      <h1>{item.temperatura} C</h1>
                       <h2>cisnienie: {item.cisnienie}</h2>
+                      <h3>Godzina pomiaru : {item.godzina_pomiaru}</h3>
                     </div>
 
-                  )}): ""}
+                  )}): "wpisz poprawna nazwe Miasta"}
 
               
         </div>
