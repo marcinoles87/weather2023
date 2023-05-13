@@ -27,8 +27,10 @@ function App() {
     const foundCity = newArr.filter( (item)=> item.stacja.includes(valueInput))
     
       setCity(foundCity)
+
+    const cisnienie = foundCity[0].cisnienie
     
-  }
+  
 
     const handleClick = () => {
     setPrawda(true)
@@ -38,20 +40,21 @@ function App() {
     <div className="App">
       <h1>Weather App</h1>
         <div className="weather-card">
-            <input placeholder="find your City..." onChange={handleOnChange}></input>
+            <input placeholder="search your City..." onChange={handleOnChange}></input>
             <button onClick={handleClick}>Chosse City</button>
 
 
             {prawda ?  city.map( (item) => {
-  return(
-    <div key={item.stacja}>
-      <h1>{item.stacja}</h1>
-      <p>temperatura</p>
-      <h1>{item.temperatura}</h1>
-      <h2>cisnienie: {item.cisnienie}</h2>
-    </div>
-  )
- }): ""}
+
+                  return(
+                    <div key={item.stacja}>
+                      <h1>{item.stacja}</h1>
+                      <p>temperatura</p>
+                      <h1>{item.temperatura}</h1>
+                      <h2>cisnienie: {item.cisnienie}</h2>
+                    </div>
+
+                  )}): ""}
 
               
         </div>
