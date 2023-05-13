@@ -18,6 +18,7 @@ function App() {
    
 
   const handleOnChange = (e) =>{
+    setPrawda(false)
     e.preventDefault()
     const valueInput = e.target.value
 
@@ -33,9 +34,6 @@ function App() {
       setCity(foundCity)
       console.log(city)
      
-      if(city.length < 2){
-        setPrawda(true)
-      }
       
       
   }
@@ -44,7 +42,7 @@ function App() {
 
   const handleClick = () => {
     
-    setData(data)
+    setPrawda(true)
    }
   return (
     <div className="App">
@@ -52,14 +50,14 @@ function App() {
         <div className="weather-card">
             <input placeholder="find your City..." onChange={handleOnChange}></input>
             <button onClick={handleClick}>Chosse City</button>
-
+{/* 
             <h2>{data.stacja}</h2>
            <h1>{data.temperatura}</h1> 
-            <p>{data.data_pomiaru}</p>
+            <p>{data.data_pomiaru}</p> */}
 
             {prawda ?  city.map( (item) => {
   return(
-    <div>
+    <div key={item.stacja}>
       <h1>{item.stacja}</h1>
       <h1>{item.temperatura}</h1>
     </div>
