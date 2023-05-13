@@ -23,37 +23,24 @@ function App() {
     const valueInput = e.target.value
 
     const newArr = [...data]
-   
-    console.log(data)
+
+    const foundCity = newArr.filter( (item)=> item.stacja.includes(valueInput))
     
-       const foundCity = newArr.filter( (item)=> item.stacja.includes(valueInput))
-      console.log(foundCity)
-      // console.log(valueInput)
-      
-      
       setCity(foundCity)
-      console.log(city)
-     
-      
-      
+    
   }
 
-
-
-  const handleClick = () => {
-    
+    const handleClick = () => {
     setPrawda(true)
    }
+
   return (
     <div className="App">
       <h1>Weather App</h1>
         <div className="weather-card">
             <input placeholder="find your City..." onChange={handleOnChange}></input>
             <button onClick={handleClick}>Chosse City</button>
-{/* 
-            <h2>{data.stacja}</h2>
-           <h1>{data.temperatura}</h1> 
-            <p>{data.data_pomiaru}</p> */}
+
 
             {prawda ?  city.map( (item) => {
   return(
