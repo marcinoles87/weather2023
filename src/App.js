@@ -59,7 +59,9 @@ function App() {
   return(
     <div key={item.stacja}>
       <h1>{item.stacja}</h1>
+      <p>temperatura</p>
       <h1>{item.temperatura}</h1>
+      <h2>cisnienie: {item.cisnienie}</h2>
     </div>
   )
  }): ""}

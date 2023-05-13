@@ -28,13 +28,18 @@
   }
 
   h1{
-    font-size: 50px;
+    font-size: 60px;
     text-shadow: 2px 2px black;
   }
 
   input{
     line-height: 20px;
     border: 2px solid black;
+  }
+
+  button{
+    margin-top: 10px;
+    line-height: 30px;
   }
 }
 
