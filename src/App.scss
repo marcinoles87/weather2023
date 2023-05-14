@@ -28,8 +28,10 @@
   }
 
   h1{
+    margin: 0;
     font-size: 60px;
     text-shadow: 2px 2px black;
+
   }
 
   input{
@@ -40,6 +42,13 @@
   button{
     margin-top: 10px;
     line-height: 30px;
+  }
+
+  .temp{
+    font-size: 20px;
+    background-color: yellowgreen;
+    color:white;
+    width: 100%;
   }
 }
 

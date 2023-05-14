@@ -32,7 +32,7 @@ function App() {
     const foundCity = newArr.filter( (item)=> item.stacja.includes(valueInput))
     
       setCity(foundCity)
-     
+      setTemp(0)
     
   }
   
@@ -66,7 +66,7 @@ function App() {
                     </div>
 
                   )}): "wpisz poprawna nazwe Miasta"}
-                  {temp > 16 ? "super pogoda" : ""}
+                 <h3 className='temp'>{temp > 16 ? "super pogoda" : ""}</h3> 
                  
         </div>
     </div>
