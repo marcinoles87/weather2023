@@ -15,6 +15,13 @@ function App() {
     .then( data => setData(data))
   } , [])
 
+
+  if(prawda === true) {
+    const changeTemp = city.temperatura
+    console.log(city[0].temperatura)
+  }
+
+
    
 
   const handleOnChange = (e) =>{
@@ -37,6 +44,8 @@ function App() {
     const handleClick = () => {
     setPrawda(true)
    }
+
+
 
   return (
     <div className="App">
