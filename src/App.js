@@ -8,6 +8,7 @@ function App() {
   let [city , setCity] = useState()
   const [prawda , setPrawda] = useState(false)
  
+ 
 
   useEffect( () => {
     fetch("https://danepubliczne.imgw.pl/api/data/synop")
@@ -16,10 +17,7 @@ function App() {
   } , [])
 
 
-  if(prawda === true) {
-    const changeTemp = city.temperatura
-    console.log(city[0].temperatura)
-  }
+ 
 
 
    
@@ -36,7 +34,7 @@ function App() {
     const foundCity = newArr.filter( (item)=> item.stacja.includes(valueInput))
     
       setCity(foundCity)
-
+     
   
   }
   
@@ -63,13 +61,14 @@ function App() {
                       <p>{item.data_pomiaru}</p>
                       <h2>temperatura wynosi :</h2>
                       <h1>{item.temperatura} C</h1>
+                      
                       <h2>cisnienie: {item.cisnienie}</h2>
                       <h3>Godzina pomiaru : {item.godzina_pomiaru}</h3>
                     </div>
 
                   )}): "wpisz poprawna nazwe Miasta"}
 
-              
+                 
         </div>
     </div>
   );
