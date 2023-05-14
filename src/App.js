@@ -7,6 +7,7 @@ function App() {
   const [data, setData] = useState([])
   let [city , setCity] = useState()
   const [prawda , setPrawda] = useState(false)
+  const [temp , setTemp] = useState(0)
  
  
 
@@ -17,11 +18,8 @@ function App() {
   } , [])
 
 
+  
  
-
-
-   
-
   const handleOnChange = (e) =>{
     setPrawda(false)
     e.preventDefault()
@@ -35,15 +33,17 @@ function App() {
     
       setCity(foundCity)
      
-  
+    
   }
   
 
     const handleClick = () => {
     setPrawda(true)
+    setTemp(city[0].temperatura)
    }
 
-
+  console.log(temp)
+   
 
   return (
     <div className="App">
@@ -61,13 +61,12 @@ function App() {
                       <p>{item.data_pomiaru}</p>
                       <h2>temperatura wynosi :</h2>
                       <h1>{item.temperatura} C</h1>
-                      
                       <h2>cisnienie: {item.cisnienie}</h2>
                       <h3>Godzina pomiaru : {item.godzina_pomiaru}</h3>
                     </div>
 
                   )}): "wpisz poprawna nazwe Miasta"}
-
+                  {temp > 16 ? "super pogoda" : ""}
                  
         </div>
     </div>
