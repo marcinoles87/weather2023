@@ -4,7 +4,7 @@ import React , {useEffect, useState} from 'react'
 
 function App() {
 
-  const [data, setData] = useState([{}])
+  const [data, setData] = useState([])
   let [city , setCity] = useState()
   const [prawda , setPrawda] = useState(false)
   const [temp , setTemp] = useState(0)
