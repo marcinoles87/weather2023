@@ -46,7 +46,10 @@
 
   .temp{
     font-size: 20px;
+    height: 200px;
     background-color: yellowgreen;
+    background-image: url('./img/sun.jpg');
+    background-size: contain;
     color:white;
     width: 100%;
   }
