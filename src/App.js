@@ -7,7 +7,7 @@ function App() {
   const [data, setData] = useState([])
   let [city , setCity] = useState()
   const [prawda , setPrawda] = useState(false)
-  const [temp , setTemp] = useState(0)
+  let [temp , setTemp] = useState(0)
  
  
 
@@ -67,6 +67,9 @@ function App() {
 
                   )}): "wpisz poprawna nazwe Miasta"}
                  {temp > 16 ? <div className='temp'><p>super pogoda</p> </div> : ""} 
+                 {temp < 16  && temp > 10 ? <div className='temp'><p>ubierz sie ciepło</p> </div> : ""} 
+                
+                 
                  
         </div>
     </div>
