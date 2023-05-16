@@ -51,17 +51,16 @@
     font-size: 20px;
     background-color: none;
     color:white;
-    // filter: opacity(0.5);
-    z-index: 0;
+    filter: opacity(0.5);
     
-    .t-2{
-      text-transform: uppercase;
-      color: blue;
-      font-family: Arial, Helvetica, sans-serif;
+    
+    p{
+      color:white;
       font-size: 40px;
-      z-index: 1;
-      background-color: gray;
-      opacity: (0.5);
+      font-family: 'Roboto';
+      background-color: rgb(7, 14, 14);
+      filter: opacity(0.5);
+      
     }
 
     
