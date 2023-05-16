@@ -66,7 +66,7 @@ function App() {
                     </div>
 
                   )}): "wpisz poprawna nazwe Miasta"}
-                 {temp > 16 ? <h3 className='temp'><span>"super pogoda"</span> </h3> : ""} 
+                 {temp > 16 ? <div className='temp'><div className='t-2'>"super pogoda"</div> </div> : ""} 
                  
         </div>
     </div>
