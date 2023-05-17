@@ -44,11 +44,14 @@ function App() {
 
   console.log(temp)
    
+  
 
   return (
     <div className="App">
       <h1>Weather App</h1>
         <div className="weather-card">
+
+
             <input placeholder="search your City..." onChange={handleOnChange}></input>
             <button onClick={handleClick}>Chosse City</button>
 
@@ -68,12 +71,25 @@ function App() {
                   )}): "wpisz poprawna nazwe Miasta"}
                  {temp > 16 ? <div className='temp'><p>super pogoda</p> </div> : ""} 
                  {temp < 16  && temp > 10 ? <div className='temp'><p>ubierz sie ciepło</p> </div> : ""} 
-                
-                 
-                 
+                  
+        
         </div>
+        <select>
+        {data.map( (item,index) => {
+    return(
+      
+        <option key={index}>{item.stacja}</option> 
+      
+    )
+  })}
+        </select>
     </div>
+
+    
   );
+
+  
+
 }
 
 export default App;
