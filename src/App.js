@@ -8,17 +8,19 @@ function App() {
   let [city , setCity] = useState()
   const [prawda , setPrawda] = useState(false)
   let [temp , setTemp] = useState(0)
+  let [optionValue , setOptionValue] = useState('')
  
- 
+  const id = document.querySelector('option')
+  
+  
 
+  
   useEffect( () => {
     fetch("https://danepubliczne.imgw.pl/api/data/synop")
     .then( response => response.json())
     .then( data => setData(data))
   } , [])
 
-
-  
  
   const handleOnChange = (e) =>{
     setPrawda(false)
@@ -38,6 +40,8 @@ function App() {
   
 
     const handleClick = () => {
+    
+    // setOptionValue(idValue)
     setPrawda(true)
     setTemp(city[0].temperatura)
    }
@@ -78,10 +82,11 @@ function App() {
         {data.map( (item,index) => {
     return(
       
-        <option key={index}>{item.stacja}</option> 
-      
+        <option id="option" key={index} value={item.stacja}>{item.stacja}</option> 
     )
   })}
+
+  
         </select>
     </div>
 
