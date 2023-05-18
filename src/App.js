@@ -40,18 +40,20 @@ function App() {
 
     const handleClick = () => {
 
-      const id = document.querySelector('option')
-      console.log(id.value)
-
     
-    setOptionValue(id.value)
     setPrawda(true)
     setTemp(city[0].temperatura)
    }
 
   console.log(temp)
    
+  const handleOptionChange = () => {
+    const id = document.querySelector('option').selected
+    console.log(id.value)
+
   
+  setOptionValue(id.value)
+  }
 
   return (
     <div className="App">
@@ -84,11 +86,13 @@ function App() {
         <p>Avaiable City:</p>
         <select>
           
+          
         {data.map( (item,index) => {
           
     return(
+        
+        <option id="option" key={index} value={item.stacja} onClick={handleOptionChange}>{item.stacja}</option> 
       
-        <option id="option" key={index} value={optionValue}>{item.stacja}</option> 
     )
   })}
 
