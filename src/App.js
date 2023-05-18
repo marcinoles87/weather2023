@@ -10,7 +10,6 @@ function App() {
   let [temp , setTemp] = useState(0)
   let [optionValue , setOptionValue] = useState('')
  
-  const id = document.querySelector('option')
   
   
 
@@ -40,8 +39,12 @@ function App() {
   
 
     const handleClick = () => {
+
+      const id = document.querySelector('option')
+      console.log(id.value)
+
     
-    // setOptionValue(idValue)
+    setOptionValue(id.value)
     setPrawda(true)
     setTemp(city[0].temperatura)
    }
@@ -74,15 +77,18 @@ function App() {
 
                   )}): "wpisz poprawna nazwe Miasta"}
                  {temp > 16 ? <div className='temp'><p>super pogoda</p> </div> : ""} 
-                 {temp < 16  && temp > 10 ? <div className='temp'><p>ubierz sie ciepło</p> </div> : ""} 
+                 {temp < 14  && temp > 8 ? <div className='temp'><p>ubierz sie ciepło</p> </div> : ""} 
                   
         
         </div>
+        <p>Avaiable City:</p>
         <select>
+          
         {data.map( (item,index) => {
+          
     return(
       
-        <option id="option" key={index} value={item.stacja}>{item.stacja}</option> 
+        <option id="option" key={index} value={optionValue}>{item.stacja}</option> 
     )
   })}
 
