@@ -72,8 +72,8 @@ function App() {
                       <h1>{item.stacja}</h1>
                       <p>{item.data_pomiaru}</p>
                       <h2>temperatura wynosi :</h2>
-                      <h1>{item.temperatura} C</h1>
-                      <h2>cisnienie: {item.cisnienie}</h2>
+                      <h1 className='temperature'>{item.temperatura} C</h1>
+                      <h3>cisnienie: {item.cisnienie}</h3>
                       <h3>Godzina pomiaru : {item.godzina_pomiaru}</h3>
                     </div>
 
