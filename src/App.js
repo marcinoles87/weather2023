@@ -8,7 +8,7 @@ function App() {
   let [city , setCity] = useState()
   const [prawda , setPrawda] = useState(false)
   let [temp , setTemp] = useState(0)
-  let [optionValue , setOptionValue] = useState('')
+  
  
   
   
@@ -45,15 +45,7 @@ function App() {
     setTemp(city[0].temperatura)
    }
 
-  console.log(temp)
    
-  const handleOptionChange = () => {
-    const id = document.querySelector('option').selected
-    console.log(id.value)
-
-  
-  setOptionValue(id.value)
-  }
 
   return (
     <div className="App">
@@ -84,14 +76,14 @@ function App() {
         
         </div>
         <p>Avaiable City:</p>
+        
         <select>
-          
           
         {data.map( (item,index) => {
           
     return(
         
-        <option id="option" key={index} value={item.stacja} onClick={handleOptionChange}>{item.stacja}</option> 
+        <option id="option" key={index} value={item.stacja}>{item.stacja}</option> 
       
     )
   })}
