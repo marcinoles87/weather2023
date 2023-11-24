@@ -77,7 +77,7 @@ function App() {
                  {temp < 14  && temp > 8 ? <div className='temp'><p>ubierz sie ciepło</p> </div> : ""} 
 
 
-                 <p>Avaiable City:</p>
+                 <p>Dostepne miasta:</p>
                  <select>
           
           {data.map( (item,index) => {
