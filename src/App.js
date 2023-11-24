@@ -18,6 +18,8 @@ function App() {
     fetch("https://danepubliczne.imgw.pl/api/data/synop")
     .then( response => response.json())
     .then( data => setData(data))
+
+    console.log(data)
   } , [])
 
  
@@ -29,6 +31,7 @@ function App() {
     const newArr = [...data]
 
     console.log(newArr)
+    
 
     const foundCity = newArr.filter( (item)=> item.stacja.includes(valueInput))
     
@@ -72,24 +75,28 @@ function App() {
                   )}): "wpisz poprawna nazwe Miasta"}
                  {temp > 16 ? <div className='temp'><p>super pogoda</p> </div> : ""} 
                  {temp < 14  && temp > 8 ? <div className='temp'><p>ubierz sie ciepło</p> </div> : ""} 
+
+
+                 <p>Avaiable City:</p>
+                 <select>
+          
+          {data.map( (item,index) => {
+            
+      return(
+          
+          <option id="option" key={index} value={item.stacja}>{item.stacja}</option> 
+        
+      )
+    })}
+  
+    
+          </select>
                   
         
         </div>
-        <p>Avaiable City:</p>
         
-        <select>
-          
-        {data.map( (item,index) => {
-          
-    return(
         
-        <option id="option" key={index} value={item.stacja}>{item.stacja}</option> 
       
-    )
-  })}
-
-  
-        </select>
     </div>
 
     
