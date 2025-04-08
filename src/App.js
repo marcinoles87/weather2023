@@ -8,6 +8,8 @@ function App() {
   let [city , setCity] = useState()
   const [prawda , setPrawda] = useState(false)
   let [temp , setTemp] = useState(0)
+
+  const [selected , setSelected] = useState();
   
  
   
@@ -20,7 +22,7 @@ function App() {
     .then( data => setData(data))
 
     console.log(data)
-  } , [])
+  } , [] )
 
  
   const handleOnChange = (e) =>{
@@ -58,6 +60,17 @@ function App() {
 
             <input placeholder="search your City..." onChange={handleOnChange}></input>
             <button onClick={handleClick}>Chosse City</button>
+            <select>
+                  {data.map( (item,index) => {
+                  
+                  return(
+                      
+                      <option id="option" key={index} value={item.stacja}>{item.stacja}</option> 
+                    
+                  )
+                })}
+            </select>
+
 
 
             {prawda ?  city.map( (item) => {
@@ -77,7 +90,7 @@ function App() {
                  {temp < 14  && temp > 8 ? <div className='temp'><p>ubierz sie ciepło</p> </div> : ""} 
 
 
-                 <p>Dostepne miasta:</p>
+                 {/* <p>Dostepne miasta:</p>
                  <select>
           
           {data.map( (item,index) => {
@@ -90,7 +103,7 @@ function App() {
     })}
   
     
-          </select>
+          </select> */}
                   
         
         </div>
