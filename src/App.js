@@ -46,9 +46,14 @@ function App() {
     const handleClick = () => {
 
     
-    setPrawda(true)
-    setTemp(city[0].temperatura)
+    // setPrawda(true)
+    // setTemp(city[0].temperatura)
+
+    const selectedElement = document.querySelector('.selectElement')
+    console.log(selectedElement.value)
    }
+
+  
 
    
 
@@ -60,12 +65,12 @@ function App() {
 
             <input placeholder="search your City..." onChange={handleOnChange}></input>
             <button onClick={handleClick}>Chosse City</button>
-            <select>
+            <select className='selectElement' value={selected}>
                   {data.map( (item,index) => {
                   
                   return(
                       
-                      <option id="option" key={index} value={item.stacja}>{item.stacja}</option> 
+                      <option id="option" key={index} value={item.stacja}>{item.stacja} </option> 
                     
                   )
                 })}
