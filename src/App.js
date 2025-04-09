@@ -41,9 +41,8 @@ function App() {
     
 
     const foundCity = newArr.filter( (item)=> item.stacja.includes(valueInput))
-    const foundCity2 = newArr.filter( (item)=> item.stacja.includes(valueSelected))
     
-      setCity(foundCity2)
+      setCity(foundCity)
       setTemp(0)
     
   }
@@ -58,8 +57,20 @@ function App() {
    
    }
 
-  const handleSelected = () => {
-    console.log('wybrano')
+  const handleSelected = (e) => {
+   setSelected(e.target.value)
+   console.log(selected)
+
+   const newArr = [...data]
+   const foundCitySelected = newArr.filter( (item)=> item.stacja.includes(selected))
+
+   setCity(foundCitySelected)
+
+   console.log(city)
+
+   setPrawda(true)
+
+
   }
 
   
