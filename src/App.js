@@ -33,6 +33,7 @@ function App() {
     setPrawda(false)
     e.preventDefault()
     const valueInput = e.target.value
+    const valueSelected = selected
 
     const newArr = [...data]
 
@@ -40,8 +41,9 @@ function App() {
     
 
     const foundCity = newArr.filter( (item)=> item.stacja.includes(valueInput))
+    const foundCity2 = newArr.filter( (item)=> item.stacja.includes(valueSelected))
     
-      setCity(foundCity)
+      setCity(foundCity2)
       setTemp(0)
     
   }
@@ -56,6 +58,10 @@ function App() {
    
    }
 
+  const handleSelected = () => {
+    console.log('wybrano')
+  }
+
   
 
    
@@ -68,7 +74,7 @@ function App() {
 
             <input placeholder="search your City..." onChange={handleOnChange}></input>
             <button onClick={handleClick}>Chosse City</button>
-            <select className='selectElement' value={selected} >
+            <select className='selectElement' value={selected} onChange={handleSelected}>
                   {data.map( (item,index) => {
                   
                   return(
