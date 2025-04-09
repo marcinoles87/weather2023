@@ -85,7 +85,7 @@ function App() {
 
             <input placeholder="search your City..." onChange={handleOnChange}></input>
             <button onClick={handleClick}>Chosse City</button>
-            <select className='selectElement' value={selected} onChange={handleSelected}>
+            <select className='selectElement'  onChange={handleSelected}>
                   {data.map( (item,index) => {
                   
                   return(
